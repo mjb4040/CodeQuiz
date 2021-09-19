@@ -6,18 +6,60 @@ var questionHolderDiv = document.getElementById("question-holder");
 
 var questions = [
   {
-    text: "Who's the coolest dude?",
-    options: ["Sam", "Mike", "Arsema", "Donna"],
-    answer: "Donna",
+    text: "Where do you put JavaScript Scripts in HTML?",
+    options: ["Head or Body sections", "Knees and Toes", "Head and Shoulders", "Header and Footer"],
+    answer: "Head or Body sections",
   },
   {
-    text: "What's the best food",
-    options: ["rice", "beans", "salsa", "eggs"],
-    answer: "salsa",
+    text: "When do JavaScript Scripts execute?",
+    options: ["Never", "Within 30 Seconds", "Occasionally", "Immediately"],
+    answer: "Immediately",
   },
   {
-    text: "What's the best place",
-    options: ["beach", "woods", "mountains", "lake"],
+    text: "How many scripts can you have in a document?",
+    options: ["0", "Unlimited", "30", "Some"],
+    answer: "Unlimited",
+  },
+
+  {
+    text: "Is JavaScript case sensitive?",
+    options: ["Maybe So", "I have no Idea", "Yes", "No"],
+    answer: "Yes",
+  },
+
+  {
+    text: "Is using a semi colon at the end of a statement mandatory?",
+    options: ["No", "Yes", "Maybe So", "I have no Idea"],
+    answer: "woods",
+  },
+
+  {
+    text: "How are JavaScript comments started?",
+    options: ["{}", "[]", "*!", "//"],
+    answer: "//",
+  },
+
+  {
+    text: "Can a variables value change during the execution of a script?",
+    options: ["Yes", "No", "Maybe So", "I have no Idea"],
+    answer: "Yes",
+  },
+
+  {
+    text: "Which of the following are not types of pop-up boxes? ",
+    options: ["Confirm", "Prompt", "Alert", "Console"],
+    answer: "Console",
+  },
+
+  {
+    text: "Which of the following is NOT a type of loop in JavaScript?",
+    options: ["While", "For", "Switch"],
+    answer: "woods",
+  },
+
+  {
+    text: "Can a variables value change during the execution of a script?",
+    options: ["Yes", "No", "Maybe So", "I have no Idea"],
     answer: "woods",
   },
 ];
@@ -30,7 +72,7 @@ var score = {
 }
 
 var countdown;
-var timeLeft = 15
+var timeLeft = 300
 
 startButtonDiv.addEventListener("click", runQuiz);
 
@@ -70,10 +112,10 @@ function showButtons() {
     optionButton.textContent = currentOptions[i];
     optionButton.addEventListener("click", function () {
       if (this.textContent === correctAnswer) {
-        alert("correct!");
+        alert("Well Done!");
         score.correct++;
       } else {
-        alert("HA! wrong.");
+        alert("Doh! So Close! Keep going!");
         score.incorrect++;
       }
       qIdx++;
